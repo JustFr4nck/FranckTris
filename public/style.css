@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body{
+
+    background-color: bisque;
+}
+
+.navBar{
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(255, 220, 177);
+
+}
+
+.navBar h1{
+
+    color: green;
+}
+
+.tableDiv{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    
+}
+
+.tableDiv table, td{
+
+    border: green solid 5px;
+    border-radius: 2px 2px 2px 2px;
+    border-collapse: collapse;
+    background-color: rgb(255, 220, 177);
+    text-align: center;
+    font-size: 200%;
+    padding: 20px 30px 20px 30px;
+    
+    
+}
+
+.divCont{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.playerStyle{
+
+    margin-top: 10%;
+    text-align: center;
+    padding-right: 10%;
+    padding-left: 10%;
+
+}
+
