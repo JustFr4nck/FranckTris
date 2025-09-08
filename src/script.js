@@ -7,16 +7,28 @@ let inc = 0;
 const p1Img = `<img class="pImgStyle" src="../public/images/cat.png"></img>`;
 const p2Img = `<img class="pImgStyle" src="../public/images/dog.png"></img>`;
 
+const winner = document.getElementById("winner");
+const p1Id = document.getElementById("p1Id");
+const p2Id = document.getElementById("p2Id");
+
 //ricezione dei v ari elementi in un array
 for (let i = 0; i < 9; i++) {
   arr[i] = document.getElementById("cel" + (i + 1));
 }
+
+//controllo del click su ogni cella
+arr.forEach((cel) => {
+  cel.addEventListener("click", () => putOnClick(cel));
+});
+
 
 //Inserimento simboli di gioco
 function putOnClick(cel) {
   if (!check(cel)) {
     return;
   }
+
+  
 
   if (p1 === true) {
     cel.innerHTML = p1Img;
@@ -30,6 +42,7 @@ function putOnClick(cel) {
     p2 = false;
   }
 
+  colorPlayer();
   inc++;
 
   if (!checkWinner() && inc === 9) {
@@ -136,16 +149,16 @@ function checkWinner() {
 }
 
 //Controlla chi ha vinto e lo mostra a schermo
-function youWin(col) {
-  const winner = document.getElementById("winner");
+function youWin(cel) {
 
-  if (typeof col === "string" && col === "tie") {
+  if (typeof cel === "string" && cel === "tie") {
     winner.innerHTML = "TIE!!!";
-  } else if (col.getAttribute("who-played") === "p2") {
+  } else if (cel.getAttribute("who-played") === "p2") {
     winner.innerHTML = "PLAYER 2 WON!!!";
-  } else if (col.getAttribute("who-played") === "p1") {
+  } else if (cel.getAttribute("who-played") === "p1") {
     winner.innerHTML = "PLAYER 1 WON!!!";
   }
+
 }
 
 //ricomincia dall'inizio
@@ -153,7 +166,17 @@ document.getElementById("refreshBut").addEventListener("click", () => {
   window.location.reload();
 });
 
-//controllo del click su ogni cella
-arr.forEach((cel) => {
-  cel.addEventListener("click", () => putOnClick(cel));
-});
+function colorPlayer(){
+
+  p1Id.classList.remove("playerInGame");
+  p2Id.classList.remove("playerInGame");
+
+  if (p1 === true) {
+
+    p1Id.classList.add("playerInGame");
+  } else {
+
+    p2Id.classList.add("playerInGame");
+  }
+}
+

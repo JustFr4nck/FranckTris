@@ -98,3 +98,16 @@ body{
 
     background-color: rgb(5, 145, 5);
 }
+
+.textWin{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.playerInGame{
+
+    color: red;
+}
