@@ -33,7 +33,6 @@ function putOnClick(cel) {
   inc++;
 
   if (!checkWinner() && inc === 9) {
-    console.log(false);
     youWin("tie");
   }
 }
@@ -52,52 +51,84 @@ function check(cel) {
 //controllo algoritmi di vittoria
 function checkWinner() {
   if (
+    arr[0].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[1].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[2].getAttribute("who-played")
   ) {
+    arr[0].setAttribute("class", "backgroundWin");
+    arr[1].setAttribute("class", "backgroundWin");
+    arr[2].setAttribute("class", "backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
+    arr[0].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[3].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[6].getAttribute("who-played")
   ) {
+    arr[0].setAttribute("class", "backgroundWin");
+    arr[3].setAttribute("class", "backgroundWin");
+    arr[6].setAttribute("class", "backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
+    arr[0].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
+    arr[0].setAttribute("class", "backgroundWin");
+    arr[4].setAttribute("class", "backgroundWin");
+    arr[8].setAttribute("class", "backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
-    arr[1].getAttribute("who-played") === arr[5].getAttribute("who-played") &&
+    arr[1].getAttribute("who-played") &&
+    arr[1].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[1].getAttribute("who-played") === arr[7].getAttribute("who-played")
   ) {
+    arr[1].setAttribute("class", "backgroundWin");
+    arr[4].setAttribute("class", "backgroundWin");
+    arr[7].setAttribute("class", "backgroundWin");
     youWin(arr[1]);
     return true;
   } else if (
+    arr[2].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[5].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
+    arr[2].setAttribute("class", "backgroundWin");
+    arr[5].setAttribute("class", "backgroundWin");
+    arr[8].setAttribute("class", "backgroundWin");
     youWin(arr[2]);
     return true;
   } else if (
+    arr[2].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[6].getAttribute("who-played")
   ) {
+    arr[2].setAttribute("class", "backgroundWin");
+    arr[4].setAttribute("class", "backgroundWin");
+    arr[6].setAttribute("class", "backgroundWin");
     youWin(arr[2]);
     return true;
   } else if (
+    arr[3].getAttribute("who-played") &&
     arr[3].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[3].getAttribute("who-played") === arr[5].getAttribute("who-played")
   ) {
+    arr[3].setAttribute("class", "backgroundWin");
+    arr[4].setAttribute("class", "backgroundWin");
+    arr[5].setAttribute("class", "backgroundWin");
     youWin(arr[3]);
     return true;
   } else if (
+    arr[6].getAttribute("who-played") &&
     arr[6].getAttribute("who-played") === arr[7].getAttribute("who-played") &&
     arr[6].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
-    youWin(arr[0]);
+    arr[6].setAttribute("class", "backgroundWin");
+    arr[7].setAttribute("class", "backgroundWin");
+    arr[8].setAttribute("class", "backgroundWin");
+    youWin(arr[6]);
     return true;
   }
 
@@ -108,7 +139,7 @@ function checkWinner() {
 function youWin(col) {
   const winner = document.getElementById("winner");
 
-  if (col.innerHTML === "tie") {
+  if (typeof col === "string" && col === "tie") {
     winner.innerHTML = "TIE!!!";
   } else if (col.getAttribute("who-played") === "p2") {
     winner.innerHTML = "PLAYER 2 WON!!!";

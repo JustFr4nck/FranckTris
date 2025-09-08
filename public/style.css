@@ -87,3 +87,14 @@ body{
         color: green;
 
 }
+
+.bigImg{
+
+    width: 100px;
+    height: 100px;
+}
+
+.backgroundWin{
+
+    background-color: rgb(5, 145, 5);
+}
