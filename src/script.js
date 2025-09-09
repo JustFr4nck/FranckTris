@@ -1,6 +1,13 @@
 import { getNiknames } from "./assets/nikScript.js";
 
 let arr = [];
+
+let matrix = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]
+];
+
 let p1 = true;
 let p2 = false;
 let inc = 0;
@@ -62,7 +69,7 @@ function check(cel) {
 }
 
 // Controllo algoritmi di vittoria
-function checkWinner() {
+ function checkWinner() {
   if (
     arr[0].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[1].getAttribute("who-played") &&
@@ -146,7 +153,7 @@ function checkWinner() {
   }
 
   return false;
-}
+} 
 
 // Controlla chi ha vinto e lo mostra a schermo
 function youWin(cel) {

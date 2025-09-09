@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Apri il gioco in una nuova scheda
     const newWin = window.open("../../index.html");
 
-
     newWin.onload = () => {
-      const { nik1, nik2 } = getNiknames(); 
+      const { nik1, nik2 } = getNiknames();
       newWin.document.getElementById("player1").innerHTML = nik1;
       newWin.document.getElementById("player2").innerHTML = nik2;
     };
@@ -34,8 +33,5 @@ export function getNiknames() {
   const nik1Input = document.getElementById("nik1");
   const nik2Input = document.getElementById("nik2");
 
-  return {
-    nik1: nik1Input ? nik1Input.value : "",
-    nik2: nik2Input ? nik2Input.value : ""
-  };
+  return { nik1: nik1Input.value, nik2: nik2Input.value };
 }
