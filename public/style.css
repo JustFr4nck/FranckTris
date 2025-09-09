@@ -29,25 +29,26 @@ body{
 .tableDiv{
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: 10%;
-    color: rgb(255, 220, 177);
+    border: green solid 2.5px;
+    
     
 }
 
-.tableDiv table, td{
-
-    border: green solid 5px;
-    border-radius: 2px 2px 2px 2px;
-    border-collapse: collapse;
-    background-color: rgb(255, 220, 177);
+.tableDiv div{
     text-align: center;
     font-size: 200%;
-    padding: 20px 30px 20px 30px;
-    
-    
+}
+
+.internalGrid{
+    background-color: rgb(255, 220, 177);
+     border: green solid 2.5px;
+     width: 150px;
+     height: 150px;
+     align-content: center;
 }
 
 .divCont{
@@ -74,17 +75,23 @@ body{
 
 .refreshButStyle{
 
+    width: 80px;
+    height: 50px;
     margin-top: 15px;
     background-color: green;
     color: wheat;
     border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px green ;
     transition: background-color 0.5s ease;
+    transition: box-shadow 0.5s ease;
 }
 
 .refreshButStyle:hover{
 
         background-color: wheat;
         color: green;
+        box-shadow: none;
 
 }
 
@@ -110,5 +117,16 @@ body{
 .playerInGame{
 
     color: red;
+}
+
+.centerStructure{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divBtn{
+    padding-top: 15px;
 }
 

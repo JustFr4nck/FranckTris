@@ -53,7 +53,7 @@ function putOnClick(cel) {
 
 //controlla che dove il giocatore clicca non ci sia già un' icona
 function check(cel) {
-  if (cel.innerHTML !== "x") {
+  if (cel.innerHTML !== "") {
     alert(
       "ERRORE: non puoi inserire il simbolo dove ne è già presente un altro"
     );
@@ -69,9 +69,9 @@ function checkWinner() {
     arr[0].getAttribute("who-played") === arr[1].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[2].getAttribute("who-played")
   ) {
-    arr[0].setAttribute("class", "backgroundWin");
-    arr[1].setAttribute("class", "backgroundWin");
-    arr[2].setAttribute("class", "backgroundWin");
+    arr[0].classList.add("backgroundWin");
+    arr[1].classList.add("backgroundWin");
+    arr[2].classList.add("backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
@@ -79,9 +79,9 @@ function checkWinner() {
     arr[0].getAttribute("who-played") === arr[3].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[6].getAttribute("who-played")
   ) {
-    arr[0].setAttribute("class", "backgroundWin");
-    arr[3].setAttribute("class", "backgroundWin");
-    arr[6].setAttribute("class", "backgroundWin");
+    arr[0].classList.add("backgroundWin");
+    arr[3].classList.add("backgroundWin");
+    arr[6].classList.add("backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
@@ -89,9 +89,9 @@ function checkWinner() {
     arr[0].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[0].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
-    arr[0].setAttribute("class", "backgroundWin");
-    arr[4].setAttribute("class", "backgroundWin");
-    arr[8].setAttribute("class", "backgroundWin");
+    arr[0].classList.add("backgroundWin");
+    arr[4].classList.add("backgroundWin");
+    arr[8].classList.add("backgroundWin");
     youWin(arr[0]);
     return true;
   } else if (
@@ -99,9 +99,9 @@ function checkWinner() {
     arr[1].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[1].getAttribute("who-played") === arr[7].getAttribute("who-played")
   ) {
-    arr[1].setAttribute("class", "backgroundWin");
-    arr[4].setAttribute("class", "backgroundWin");
-    arr[7].setAttribute("class", "backgroundWin");
+    arr[1].classList.add("backgroundWin");
+    arr[4].classList.add("backgroundWin");
+    arr[7].classList.add("backgroundWin");
     youWin(arr[1]);
     return true;
   } else if (
@@ -109,9 +109,9 @@ function checkWinner() {
     arr[2].getAttribute("who-played") === arr[5].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
-    arr[2].setAttribute("class", "backgroundWin");
-    arr[5].setAttribute("class", "backgroundWin");
-    arr[8].setAttribute("class", "backgroundWin");
+    arr[2].classList.add("backgroundWin");
+    arr[5].classList.add("backgroundWin");
+    arr[8].classList.add("backgroundWin");
     youWin(arr[2]);
     return true;
   } else if (
@@ -119,9 +119,9 @@ function checkWinner() {
     arr[2].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[2].getAttribute("who-played") === arr[6].getAttribute("who-played")
   ) {
-    arr[2].setAttribute("class", "backgroundWin");
-    arr[4].setAttribute("class", "backgroundWin");
-    arr[6].setAttribute("class", "backgroundWin");
+    arr[2].classList.add("backgroundWin");
+    arr[4].classList.add("backgroundWin");
+    arr[6].classList.add("backgroundWin");
     youWin(arr[2]);
     return true;
   } else if (
@@ -129,9 +129,9 @@ function checkWinner() {
     arr[3].getAttribute("who-played") === arr[4].getAttribute("who-played") &&
     arr[3].getAttribute("who-played") === arr[5].getAttribute("who-played")
   ) {
-    arr[3].setAttribute("class", "backgroundWin");
-    arr[4].setAttribute("class", "backgroundWin");
-    arr[5].setAttribute("class", "backgroundWin");
+    arr[3].classList.add("backgroundWin");
+    arr[4].classList.add("backgroundWin");
+    arr[5].classList.add("backgroundWin");
     youWin(arr[3]);
     return true;
   } else if (
@@ -139,9 +139,9 @@ function checkWinner() {
     arr[6].getAttribute("who-played") === arr[7].getAttribute("who-played") &&
     arr[6].getAttribute("who-played") === arr[8].getAttribute("who-played")
   ) {
-    arr[6].setAttribute("class", "backgroundWin");
-    arr[7].setAttribute("class", "backgroundWin");
-    arr[8].setAttribute("class", "backgroundWin");
+    arr[6].classList.add("backgroundWin");
+    arr[7].classList.add("backgroundWin");
+    arr[8].classList.add("backgroundWin");
     youWin(arr[6]);
     return true;
   }
