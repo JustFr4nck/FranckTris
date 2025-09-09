@@ -14,7 +14,7 @@
 
     <div class="divCont">
       <div id="p1Id" class="playerStyle">
-        <h3>Player 1</h3>
+        <h3 id="player1">Player 1</h3>
         <img class="bigImg" src="./public/images/cat.png" alt="" />
       </div>
       <div class="centerStructure">
@@ -37,18 +37,18 @@
         </div>
         <div class="divBtn">
           <button id="refreshBut" class="refreshButStyle story-script-regular">Refresh</button>
+          <button class="refreshButStyle story-script-regular" id="goToNik">select nik</button>
         </div>
       </div>
 
       <div id="p2Id" class="playerStyle">
-        <h3>Player 2</h3>
+        <h3 id="player2">Player 2</h3>
         <img class="bigImg" src="./public/images/dog.png" alt="" />
       </div>
     </div>
     <div class="textWin">
       <h2 id="winner"></h2>
     </div>
-
-    <script src="./src/script.js"></script>
+    <script type="module" src="./src/script.js"></script>
   </body>
 </html>

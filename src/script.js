@@ -1,5 +1,6 @@
-let arr = [];
+import { getNiknames } from "./assets/nikScript.js";
 
+let arr = [];
 let p1 = true;
 let p2 = false;
 let inc = 0;
@@ -12,26 +13,24 @@ const winner = document.getElementById("winner");
 const p1Id = document.getElementById("p1Id");
 const p2Id = document.getElementById("p2Id");
 
-//inizia sempre il giocatore 1
+// inizia sempre il giocatore 1
 p1Id.classList.add("playerInGame");
 
-//ricezione dei v ari elementi in un array
+// ricezione dei vari elementi in un array
 for (let i = 0; i < 9; i++) {
   arr[i] = document.getElementById("cel" + (i + 1));
 }
 
-//controllo del click su ogni cella
-  arr.forEach((cel) => {
-    cel.addEventListener("click", () => putOnClick(cel));
-  });
+// controllo del click su ogni cella
+arr.forEach((cel) => {
+  cel.addEventListener("click", () => putOnClick(cel));
+});
 
-//Inserimento simboli di gioco
+// Inserimento simboli di gioco
 function putOnClick(cel) {
-  if (!check(cel)) {
-    return;
-  }
+  if (!check(cel)) return;
 
-  if (p1 === true) {
+  if (p1) {
     cel.innerHTML = p1Img;
     cel.setAttribute("who-played", "p1");
     p1 = false;
@@ -51,7 +50,7 @@ function putOnClick(cel) {
   }
 }
 
-//controlla che dove il giocatore clicca non ci sia già un' icona
+// Controlla che la cella sia vuota
 function check(cel) {
   if (cel.innerHTML !== "") {
     alert(
@@ -62,7 +61,7 @@ function check(cel) {
   return true;
 }
 
-//controllo algoritmi di vittoria
+// Controllo algoritmi di vittoria
 function checkWinner() {
   if (
     arr[0].getAttribute("who-played") &&
@@ -149,7 +148,7 @@ function checkWinner() {
   return false;
 }
 
-//Controlla chi ha vinto e lo mostra a schermo
+// Controlla chi ha vinto e lo mostra a schermo
 function youWin(cel) {
   if (typeof cel === "string" && cel === "tie") {
     winner.innerHTML = "TIE!!!";
@@ -159,22 +158,31 @@ function youWin(cel) {
     winner.innerHTML = "PLAYER 1 WON!!!";
   }
   flagWin = true;
-  console.log(flagWin)
 }
 
-//ricomincia dall'inizio
+// Ricomincia dall'inizio
 document.getElementById("refreshBut").addEventListener("click", () => {
   window.location.reload();
   flagWin = false;
 });
 
+// Cambia il colore a seconda del player che deve giocare
 function colorPlayer() {
   p1Id.classList.remove("playerInGame");
   p2Id.classList.remove("playerInGame");
 
-  if (p1 === true) {
+  if (p1) {
     p1Id.classList.add("playerInGame");
   } else {
     p2Id.classList.add("playerInGame");
   }
 }
+
+// Bottone per aprire pagina nickname
+const goToNik = document.getElementById("goToNik");
+
+goToNik.addEventListener("click", () => {
+  const newWin = window.open("./src/pages/niknames.html", "_blank");
+  
+});
+  
