@@ -11,6 +11,9 @@ const winner = document.getElementById("winner");
 const p1Id = document.getElementById("p1Id");
 const p2Id = document.getElementById("p2Id");
 
+//inizia sempre il giocatore 1
+p1Id.classList.add("playerInGame");
+
 //ricezione dei v ari elementi in un array
 for (let i = 0; i < 9; i++) {
   arr[i] = document.getElementById("cel" + (i + 1));
