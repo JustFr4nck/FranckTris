@@ -3,6 +3,7 @@ let arr = [];
 let p1 = true;
 let p2 = false;
 let inc = 0;
+let flagWin = false;
 
 const p1Img = `<img class="pImgStyle" src="../public/images/cat.png"></img>`;
 const p2Img = `<img class="pImgStyle" src="../public/images/dog.png"></img>`;
@@ -20,18 +21,15 @@ for (let i = 0; i < 9; i++) {
 }
 
 //controllo del click su ogni cella
-arr.forEach((cel) => {
-  cel.addEventListener("click", () => putOnClick(cel));
-});
-
+  arr.forEach((cel) => {
+    cel.addEventListener("click", () => putOnClick(cel));
+  });
 
 //Inserimento simboli di gioco
 function putOnClick(cel) {
   if (!check(cel)) {
     return;
   }
-
-  
 
   if (p1 === true) {
     cel.innerHTML = p1Img;
@@ -153,7 +151,6 @@ function checkWinner() {
 
 //Controlla chi ha vinto e lo mostra a schermo
 function youWin(cel) {
-
   if (typeof cel === "string" && cel === "tie") {
     winner.innerHTML = "TIE!!!";
   } else if (cel.getAttribute("who-played") === "p2") {
@@ -161,25 +158,23 @@ function youWin(cel) {
   } else if (cel.getAttribute("who-played") === "p1") {
     winner.innerHTML = "PLAYER 1 WON!!!";
   }
-
+  flagWin = true;
+  console.log(flagWin)
 }
 
 //ricomincia dall'inizio
 document.getElementById("refreshBut").addEventListener("click", () => {
   window.location.reload();
+  flagWin = false;
 });
 
-function colorPlayer(){
-
+function colorPlayer() {
   p1Id.classList.remove("playerInGame");
   p2Id.classList.remove("playerInGame");
 
   if (p1 === true) {
-
     p1Id.classList.add("playerInGame");
   } else {
-
     p2Id.classList.add("playerInGame");
   }
 }
-
