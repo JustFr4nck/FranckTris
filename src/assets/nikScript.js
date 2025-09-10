@@ -19,19 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Apri il gioco in una nuova scheda
-    const newWin = window.open("../../index.html");
+    const nikWin = window.open("../../index.html");
 
-    newWin.onload = () => {
+    nikWin.onload = () => {
       const { nik1, nik2 } = getNiknames();
-      newWin.document.getElementById("player1").innerHTML = nik1;
-      newWin.document.getElementById("player2").innerHTML = nik2;
+      nikWin.document.getElementById("player1").innerHTML = nik1;
+      nikWin.document.getElementById("player2").innerHTML = nik2;
     };
   });
 });
 
 export function getNiknames() {
-  const nik1Input = document.getElementById("nik1");
-  const nik2Input = document.getElementById("nik2");
+  const nik1Text = document.getElementById("nik1");
+  const nik2Text = document.getElementById("nik2");
 
-  return { nik1: nik1Input.value, nik2: nik2Input.value };
+  return { nik1: nik1Text.value, nik2: nik2Text.value };
 }
