@@ -13,41 +13,45 @@
     </nav>
 
     <div class="divCont">
-      <div id="p1Id" class="playerStyle">
+      <div id="colorP1" class="playerStyle">
         <h3 id="player1">Player 1</h3>
         <img class="bigImg" src="./public/images/cat.png" alt="" />
       </div>
       <div class="centerStructure">
         <div class="tableDiv">
           <div>
-            <div class="internalGrid" id="cel1"></div>
-            <div class="internalGrid" id="cel2"></div>
-            <div class="internalGrid" id="cel3"></div>
+            <div class="internalGrid" id="cel1" data-row="0" data-col="0"></div>
+            <div class="internalGrid" id="cel2" data-row="0" data-col="1"></div>
+            <div class="internalGrid" id="cel3" data-row="0" data-col="2"></div>
           </div>
           <div>
-            <div class="internalGrid" id="cel4"></div>
-            <div class="internalGrid" id="cel5"></div>
-            <div class="internalGrid" id="cel6"></div>
+            <div class="internalGrid" id="cel4" data-row="1" data-col="0"></div>
+            <div class="internalGrid" id="cel5" data-row="1" data-col="1"></div>
+            <div class="internalGrid" id="cel6" data-row="1" data-col="2"></div>
           </div>
           <div>
-            <div class="internalGrid" id="cel7"></div>
-            <div class="internalGrid" id="cel8"></div>
-            <div class="internalGrid" id="cel9"></div>
-          </div> 
+            <div class="internalGrid" id="cel7" data-row="2" data-col="0"></div>
+            <div class="internalGrid" id="cel8" data-row="2" data-col="1"></div>
+            <div class="internalGrid" id="cel9" data-row="2" data-col="2"></div>
+          </div>
         </div>
         <div class="divBtn">
-          <button id="refreshBut" class="refreshButStyle story-script-regular">Refresh</button>
-          <button class="refreshButStyle story-script-regular" id="goToNik">select nik</button>
+          <button id="refreshBtn" class="refreshButStyle story-script-regular">
+            Refresh
+          </button>
+          <button class="refreshButStyle story-script-regular" id="goToNik">
+            select nik
+          </button>
         </div>
       </div>
 
-      <div id="p2Id" class="playerStyle">
+      <div id="colorP2" class="playerStyle">
         <h3 id="player2">Player 2</h3>
         <img class="bigImg" src="./public/images/dog.png" alt="" />
       </div>
     </div>
     <div class="textWin">
-      <h2 id="winner"></h2>
+      <h2></h2>
     </div>
     <script type="module" src="./src/script.js"></script>
   </body>

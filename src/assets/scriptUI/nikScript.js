@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const nik2 = document.getElementById("nik2");
   const confBtn = document.getElementById("confBtn");
 
-  // Se gli elementi non esistono, non fare nulla
+  // in caso gli elementi non siano dichiarati
   if (!confBtn || !nik1 || !nik2) return;
 
   confBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Controlli sui nickname
+    // controlli che le caselle vengano utilizzate correttamante
     if (nik1.value === nik2.value && nik1.value !== "" && nik2.value !== "") {
       alert("ERROR: nicknames must be different!!!");
       return;
@@ -18,9 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Apri il gioco in una nuova scheda
-    const nikWin = window.open("../../index.html");
+    //apre di nuovo la finestra index
+    const nikWin = window.open("../../../index.html");
 
+    //sul caricamento della pagina esegue l'arrow function seguente
     nikWin.onload = () => {
       const { nik1, nik2 } = getNiknames();
       nikWin.document.getElementById("player1").innerHTML = nik1;
