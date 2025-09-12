@@ -33,7 +33,7 @@ export function checkAlgo(matrix) {
   for (let i = 0; i < 3; i++) {
     // controllo delle righe
     if (
-      matrix[i][0] !== null &&
+      matrix[i][0] !== 0 &&
       matrix[i][0] === matrix[i][1] &&
       matrix[i][0] === matrix[i][2]
     ) {
@@ -42,7 +42,7 @@ export function checkAlgo(matrix) {
 
     // controllo delle colonne
     if (
-      matrix[0][i] !== null &&
+      matrix[0][i] !== 0 &&
       matrix[0][i] === matrix[1][i] &&
       matrix[0][i] === matrix[2][i]
     ) {
@@ -52,14 +52,14 @@ export function checkAlgo(matrix) {
 
   // controllo diagonali
   if (
-    matrix[0][0] !== null &&
+    matrix[0][0] !== 0 &&
     matrix[0][0] === matrix[1][1] &&
     matrix[0][0] === matrix[2][2]
   ) {
     return matrix[0][0];
   }
   if (
-    matrix[0][2] !== null &&
+    matrix[0][2] !== 0 &&
     matrix[0][2] === matrix[1][1] &&
     matrix[0][2] === matrix[2][0]
   ) {
@@ -67,7 +67,7 @@ export function checkAlgo(matrix) {
   }
 
   // controllo pareggio
-  const isFull = matrix.flat().every((cel) => cel !== null);
+  const isFull = matrix.flat().every((cel) => cel !== 0);
   if (isFull) {
     return "tie";
   }
